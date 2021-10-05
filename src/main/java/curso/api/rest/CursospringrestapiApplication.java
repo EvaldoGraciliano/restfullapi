@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @SpringBootApplication
-@EntityScan(basePackages = {"curso.api.rest.model"})
-@ComponentScan ({"curso.*"})
-@EnableJpaRepositories(basePackages = {"curso.api.rest.repository"})
-@EnableTransactionManagement
-@EnableWebMvc
+@EntityScan(basePackages = {"curso.api.rest.model"}) // lê todas as classes do pacote e cria as tabelas automáticas
+@ComponentScan ({"curso.*"}) // Injeção de dependência, spring controla todos os objetos
+@EnableJpaRepositories(basePackages = {"curso.api.rest.repository"}) // 
+@EnableTransactionManagement // controlar as transações no banco de dados 
+@EnableWebMvc 
 @RestController
 @EnableAutoConfiguration
 public class CursospringrestapiApplication {
