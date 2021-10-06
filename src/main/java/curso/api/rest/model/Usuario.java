@@ -21,9 +21,13 @@ public class Usuario implements Serializable {
 	
 	private Long id;
 	
-	private String senha;
+	private String login;
 	
 	private String nome;
+	
+	private String senha;
+	
+	
 
 	public Long getId() {
 		return id;
@@ -35,6 +39,14 @@ public class Usuario implements Serializable {
 
 	public String getSenha() {
 		return senha;
+	}
+
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
 	}
 
 	public void setSenha(String senha) {
