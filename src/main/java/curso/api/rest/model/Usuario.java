@@ -27,9 +27,9 @@ public class Usuario implements Serializable {
 	
 	private String login;
 	
-	private String nome;
-	
 	private String senha;
+	
+	private String nome;
 	
 	@OneToMany (mappedBy="usuario", orphanRemoval = true , cascade = CascadeType.ALL)
 	private List <Telefone> telefones = new ArrayList <Telefone>();
@@ -65,6 +65,15 @@ public class Usuario implements Serializable {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+	
+	public List<Telefone> getTelefones() {
+			return telefones;
+	}
+	
+	public void setTelefones (List<Telefone> telefones) {
+		this.telefones = telefones;
+	}
+	
 
 	@Override
 	public int hashCode() {

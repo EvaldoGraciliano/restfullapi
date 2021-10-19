@@ -6,6 +6,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Telefone {
 	
@@ -15,8 +17,10 @@ public class Telefone {
 	
 	private String numero;
 	
+	@SuppressWarnings("deprecation")
+	@JsonIgnore
 	@org.hibernate.annotations.ForeignKey(name="usuario_id") // associado a qual usuário?
-	@ManyToOne // relacionamento muitos para um 
+	@ManyToOne(optional = false) // relacionamento muitos para um . Optionaç = false significa que para cadastro de telefone terá de ter um pai.
 	private Usuario usuario;
 
 	public Long getId() {
